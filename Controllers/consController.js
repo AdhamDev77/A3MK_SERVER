@@ -27,10 +27,10 @@ const getOneCon = async (req, res) => {
 
 const createCons = async (req, res) => {
     try {
-      const { cons_name, cons_subject, cons_phone, cons_message, cons_comment, cons_time, cons_seen} = req.body;
+      const { cons_name, cons_subject,cons_mos, cons_phone, cons_message, cons_comment, cons_time, cons_seen} = req.body;
   
       // Validate required fields
-      if (!cons_name || !cons_phone || !cons_subject || !cons_message || !cons_comment || !cons_time || !cons_seen) {
+      if (!cons_name || !cons_phone || !cons_subject || !cons_message || !cons_comment || !cons_time || !cons_seen || !cons_mos) {
         return res.status(400).json({ error: "يجب ملأ جميع الخانات من فضلك" });
       }
   
@@ -38,6 +38,7 @@ const createCons = async (req, res) => {
       const cons = await Cons.create({
         cons_name,
         cons_phone,
+        cons_mos,
         cons_subject,
         cons_message,
         cons_comment,

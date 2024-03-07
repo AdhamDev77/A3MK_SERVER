@@ -32,6 +32,7 @@ const usersSchema = new Schema({
         type: String,
     },
     approved: { type: Boolean, default: false },
+    admin: { type: Boolean, default: false },
     isMos: {
         type: Boolean,
         required: true

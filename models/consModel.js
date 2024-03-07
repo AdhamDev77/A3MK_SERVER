@@ -12,6 +12,10 @@ const consSchema = new Schema({
         required: true,
         unique: true
     },
+    cons_mos: {
+        type: String,
+        required: true,
+    },
     cons_phone: {
         type: String,
         required: true

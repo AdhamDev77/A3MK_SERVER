@@ -75,10 +75,7 @@ const createComm = async (req, res) => {
 const logComm = async (req, res) => {
     const {comm_email, comm_password} = req.body
 
-    const comm = await Comm.findOne({ comm_email })
-
-    //const comm = await Comm.findOne({ comm_email, approved: true });
-
+    const comm = await Comm.findOne({ comm_email, approved: true });
 
     if(!comm){
         res.status(400).json({error: "البريد الالكتروني خاطئ"})
